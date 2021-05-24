@@ -12,14 +12,14 @@ import org.testng.annotations.Test;
 public class actitimelogin {
 	WebDriver driver;
 	@Test(dataProvider = "actiTime")
-	public void actitimelogin(String username, String pwd) throws InterruptedException
+	public void actitimelogin(String username, String password) throws InterruptedException
 	{
 		System.setProperty("webdriver.chrome.driver","C:\\selenium software\\chromedriver.exe");
 	ChromeDriver c=new ChromeDriver();
 	c.get("http://desktop-blkcn54/login.do");
-	c.findElement(By.name("username")).sendKeys(username);
+	c.findElement(By.name("nagendra")).sendKeys(username);
  c.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	c.findElement(By.name("pwd")).sendKeys(pwd);
+	c.findElement(By.name("pwd")).sendKeys(password);
 	c.findElement(By.xpath("//a[@id='loginButton']")).click();
 	Thread.sleep(5000);
 System.out.println(driver.getTitle());
